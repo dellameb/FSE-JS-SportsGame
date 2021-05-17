@@ -14,6 +14,15 @@ function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min) );
 };
 
+function winner(){
+  if (team1NumGoals.innerText > team2NumGoals.innerText) {
+  return "Team 1 Wins!"}
+  else if (team2NumGoals.innerText > team1NumGoals.innerText) {
+  return "Team 2 Wins!"}
+  else if (team1NumGoals==team2NumGoals){
+  return "It's a tie!"}
+};
+
 // when the team 1 button is clicked the counter goes up
 team1ShootBtn.addEventListener("click", function(){
     if (getRndInteger(0,2) == 0) {
@@ -54,8 +63,10 @@ team2ShootBtn.addEventListener("click", function(){
 
   // when the reset button is clicked shot and goal counters reset and reset button incr + 1
 resetBtn.addEventListener("click", function(){
-  //alert("that worked");
 
+  //alert("that worked");
+    //display who won
+    alert(winner());
     /* needed to add parseInt to convert string to a number to add */
     let totalResets = parseInt(numResets.innerHTML) + 1;
   
@@ -63,10 +74,9 @@ resetBtn.addEventListener("click", function(){
     numResets.innerText = totalResets;
     console.log(totalResets);
     //need to reset counters for other variables
-    team1NumShots = 0;
-    team2NumShots = 0;
-    team1NumGoals = 0;
-    team2NumGoals = 0;
-    //display who won
-    alert("Display the winner");
+    team1NumShots.innerText = 0;
+    team2NumShots.innerText = 0;
+    team1NumGoals.innerText = 0;
+    team2NumGoals.innerText = 0;
+
 })
