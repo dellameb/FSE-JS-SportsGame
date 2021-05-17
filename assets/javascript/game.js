@@ -19,7 +19,7 @@ function winner(){
   return "Team 1 Wins!"}
   else if (team2NumGoals.innerText > team1NumGoals.innerText) {
   return "Team 2 Wins!"}
-  else if (team1NumGoals==team2NumGoals){
+  else {
   return "It's a tie!"}
 };
 
